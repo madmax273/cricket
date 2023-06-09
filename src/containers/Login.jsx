@@ -74,71 +74,71 @@ const Login = () => {
         <form onSubmit={(e)=>handleSubmit(e)}>
         <div className="form-row">
         <div className="form-group col-md-6">
-            <label htmlFor="inputEmail4">First Name</label>
+            <label htmlFor="inputFirstName">First Name</label>
             <input
               type="text"
               className="form-control"
-              id="inputEmail4"
+              id="inputFirstName"
               placeholder="First Name"
               onChange={(e)=>setFirstName(e.target.value)}
             />
           </div>
           <div className="form-group col-md-6">
-            <label htmlFor="inputEmail4">Last Name</label>
+            <label htmlFor="inputLastName">Last Name</label>
             <input
               type="text"
               className="form-control"
-              id="inputEmail4"
+              id="inputLastName"
               placeholder="Last Name"
               onChange={(e)=>setLastName(e.target.value)}
             />
           </div>
           <div className="form-group col-md-6">
-            <label htmlFor="inputEmail4">Email</label>
+            <label htmlFor="inputEmail">Email</label>
             <input
               type="email"
               className="form-control"
-              id="inputEmail4"
+              id="inputEmail"
               placeholder="Email"
               onChange={(e)=>setEmail(e.target.value)}
             />
           </div>
           <div className="form-group col-md-6">
-            <label htmlFor="inputPassword4">City</label>
+            <label htmlFor="inputCity">City</label>
             <input
               type="text"
               className="form-control"
-              id="inputPassword4"
+              id="inputCity"
               placeholder="City"
               onChange={(e)=>setCity(e.target.value)}
             />
           </div>
           <div className="form-group col-md-6">
-            <label htmlFor="inputPassword4">Height(cm)</label>
+            <label htmlFor="inputHeight">Height(cm)</label>
             <input
-              type="text"
+              type="Number"
               className="form-control"
-              id="inputPassword4"
+              id="inputHeight"
               placeholder="Height"
               onChange={(e)=>setHeight(e.target.value)}
             />
           </div>
           <div className="form-group col-md-6">
-            <label htmlFor="inputPassword4">Weight</label>
+            <label htmlFor="inputWeight">Weight</label>
             <input
-              type="text"
+              type="Number"
               className="form-control"
-              id="inputPassword4"
+              id="inputWeight"
               placeholder="Weight"
               onChange={(e)=>setWeight(e.target.value)}
             />
           </div>
           <div className="form-group col-md-6">
-            <label htmlFor="inputPassword4">gender</label>
+            <label htmlFor="inputGender">gender</label>
              <input
               type="text"
               className="form-control"
-              id="inputPassword4"
+              id="inputGender"
               placeholder="gender"
               onChange={(e)=>setGender(e.target.value)}
             /> 
@@ -153,11 +153,11 @@ const Login = () => {
           </div>
         </div>
         <div className="form-group">
-          <label htmlFor="inputAddress">Mobile Number</label>
+          <label htmlFor="inputMobile">Mobile Number</label>
           <input
             type="text"
             className="form-control"
-            id="inputAddress"
+            id="inputMobile"
             placeholder="Mobile Number"
             onChange={(e)=>setMobile(e.target.value)}
           />
