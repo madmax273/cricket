@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import SuccessModal from "../components/Success/SuccessModals";
 
 const Login = () => {
     const [firstName, setFirstName] = useState("")
@@ -9,6 +10,7 @@ const Login = () => {
     const [height, setHeight] = useState("")
     const [weight, setWeight] = useState("")
     const [gender, setGender] = useState("")
+    const [isSuccessModal, setIsSuccessModal] = useState(true);
 
     const handleSubmit = async (e) =>{
         e.preventDefault();
@@ -53,14 +55,17 @@ const Login = () => {
               setHeight("");
               setWeight("");
               setGender("");
+              setIsSuccessModal(true)
             } else {
               console.log("Registration failed");
             }
           } catch (error) {
             console.log("Error:", error);
           }
-
+          setFirstName("");
     }
+    console.log("first", firstName, lastName, email, mobile, city, height, weight, gender)
+
 
 
     
@@ -80,6 +85,7 @@ const Login = () => {
               className="form-control"
               id="inputFirstName"
               placeholder="First Name"
+              value={firstName}
               onChange={(e)=>setFirstName(e.target.value)}
             />
           </div>
@@ -89,6 +95,7 @@ const Login = () => {
               type="text"
               className="form-control"
               id="inputLastName"
+              value={lastName}
               placeholder="Last Name"
               onChange={(e)=>setLastName(e.target.value)}
             />
@@ -99,6 +106,7 @@ const Login = () => {
               type="email"
               className="form-control"
               id="inputEmail"
+              value={email}
               placeholder="Email"
               onChange={(e)=>setEmail(e.target.value)}
             />
@@ -109,6 +117,7 @@ const Login = () => {
               type="text"
               className="form-control"
               id="inputCity"
+              value={city}
               placeholder="City"
               onChange={(e)=>setCity(e.target.value)}
             />
@@ -119,6 +128,7 @@ const Login = () => {
               type="Number"
               className="form-control"
               id="inputHeight"
+              value={height}
               placeholder="Height"
               onChange={(e)=>setHeight(e.target.value)}
             />
@@ -129,27 +139,31 @@ const Login = () => {
               type="Number"
               className="form-control"
               id="inputWeight"
+              value={weight}
               placeholder="Weight"
               onChange={(e)=>setWeight(e.target.value)}
             />
           </div>
           <div className="form-group col-md-6">
-            <label htmlFor="inputGender">gender</label>
+            {/* <label htmlFor="inputGender">gender</label>
              <input
               type="text"
               className="form-control"
               id="inputGender"
               placeholder="gender"
               onChange={(e)=>setGender(e.target.value)}
-            /> 
-            {/* <select 
-            type="text"
-            id="inputPassword4" 
+            />  */}
+            <select 
+            id="inputGender" 
             className="form-control"
-            name="cars">
+            value={gender}
+            name="gender"
+            onChange={(e)=>setGender(e.target.value)}
+            >
+             <option value="select">select</option>    
             <option value="male">male</option>
             <option value="female">female</option>
-            </select> */}
+            </select>
           </div>
         </div>
         <div className="form-group">
@@ -158,6 +172,7 @@ const Login = () => {
             type="text"
             className="form-control"
             id="inputMobile"
+            value={mobile}
             placeholder="Mobile Number"
             onChange={(e)=>setMobile(e.target.value)}
           />
@@ -174,6 +189,7 @@ const Login = () => {
           Register candidate
         </button>
       </form>
+      <SuccessModal isSuccessModal={isSuccessModal} setIsSuccessModal={setIsSuccessModal} title="Registration Successfull" text="player successfully registered" />
       </>
     )
 }
